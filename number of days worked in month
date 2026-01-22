@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int totalDays, workedDays = 0, i;
+
+    printf("Enter total number of days in the month: ");
+    scanf("%d", &totalDays);
+
+    for(i = 1; i <= totalDays; i++)
+    {
+        // Assume every 7th day is Sunday (holiday)
+        if(i % 7 != 0)
+        {
+            workedDays++;
+        }
+    }
+
+    printf("Number of days worked in the month = %d\n", workedDays);
+
+    return 0;
+}
+o/p:
+Enter total number of days in the month: 30
+Number of days worked in the month = 26
