@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main()
+{
+    float amount;
+
+    printf("Enter total purchase amount: ");
+    scanf("%f", &amount);
+
+    if (amount >= 5000)
+        printf("Customer gets a 20%% discount.\n");
+    else if (amount >= 3000)
+        printf("Customer gets a 10%% discount.\n");
+    else
+        printf("No discount for the customer.\n");
+
+    return 0;
+}
+o/p:
+Enter total purchase amount: 40000
+Customer gets a 20% discount
