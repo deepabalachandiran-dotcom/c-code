@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    float sales[7], total = 0;
+
+    printf("Enter sales for 7 days:\n");
+    for(i = 0; i < 7; i++)
+    {
+        printf("Day %d sales: ", i + 1);
+        scanf("%f", &sales[i]);
+        total += sales[i];
+    }
+
+    printf("\nTotal Weekly Sales = %.2f\n", total);
+
+    return 0;
+}
+o/p:
+Enter sales for 7 days:
+Day 1 sales: 1000
+Day 2 sales: 1200
+Day 3 sales: 1300
+Day 4 sales: 1230
+Day 5 sales: 1400
+Day 6 sales: 1800
+Day 7 sales: 1500
+
+Total Weekly Sales = 9430.00
