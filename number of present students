@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i;
+    char status;
+    int presentCount = 0;
+
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    printf("Enter attendance status for each student (P for present, A for absent):\n");
+
+    for(i = 1; i <= n; i++)
+    {
+        printf("Student %d: ", i);
+        scanf(" %c", &status);  // Note the space before %c to consume newline
+
+        if(status == 'P' || status == 'p')
+        {
+            presentCount++;
+        }
+    }
+
+    printf("\nNumber of present students = %d\n", presentCount);
+
+    return 0;
+}
+O/P:
+Enter number of students: 4
+Enter attendance status for each student (P for present, A for absent):
+Student 1: P
+Student 2: A
+Student 3: P
+Student 4: P
+
+Number of present students = 3
