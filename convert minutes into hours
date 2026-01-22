@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int totalMinutes, hours, minutes;
+
+    // Input total minutes
+    printf("Enter total minutes: ");
+    scanf("%d", &totalMinutes);
+
+    // Convert minutes into hours and minutes
+    hours = totalMinutes / 60;
+    minutes = totalMinutes % 60;
+
+    // Display result
+    printf("%d minutes = %d hours and %d minutes\n",
+           totalMinutes, hours, minutes);
+
+    return 0;
+}
+o/p
+Enter total minutes: 135
+135 minutes = 2 hours and 15 minutes
