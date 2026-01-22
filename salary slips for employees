@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i;
+    float basic, hra, da, deductions, gross, net;
+
+    printf("Enter number of employees: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++)
+    {
+        printf("\nEnter details for Employee %d\n", i);
+
+        printf("Basic Salary: ");
+        scanf("%f", &basic);
+
+        hra = basic * 0.20;   // 20% HRA
+        da  = basic * 0.10;   // 10% DA
+
+        printf("Deductions: ");
+        scanf("%f", &deductions);
+
+        gross = basic + hra + da;
+        net = gross - deductions;
+
+        printf("\n--- Salary Slip ---\n");
+        printf("Basic Salary : %.2f\n", basic);
+        printf("HRA (20%%)    : %.2f\n", hra);
+        printf("DA (10%%)     : %.2f\n", da);
+        printf("Gross Salary : %.2f\n", gross);
+        printf("Deductions   : %.2f\n", deductions);
+        printf("Net Salary   : %.2f\n", net);
+    }
+
+    return 0;
+}
+o/p:
+Enter number of employees: 1
+
+Enter details for Employee 1
+Basic Salary: 40000
+Deductions: 1200
+
+--- Salary Slip ---
+Basic Salary : 40000.00
+HRA (20%)    : 8000.00
+DA (10%)     : 4000.00
+Gross Salary : 52000.00
+Deductions   : 1200.00
+Net Salary   : 50800.00
