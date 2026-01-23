@@ -1,0 +1,70 @@
+#include <stdio.h>
+
+// structure to store book details
+struct Book
+{
+    int bookId;
+    char title[50];
+    float price;
+};
+
+int main()
+{
+    struct Book b[100];
+    int n, i;
+
+    // number of books
+    printf("Enter number of books: ");
+    scanf("%d", &n);
+
+    // input book details
+    for (i = 0; i < n; i++)
+    {
+        printf("\nEnter details of Book %d\n", i + 1);
+
+        printf("Enter Book ID: ");
+        scanf("%d", &b[i].bookId);
+
+        printf("Enter Book Title: ");
+        scanf(" %[^\n]", b[i].title);
+
+        printf("Enter Book Price: ");
+        scanf("%f", &b[i].price);
+    }
+
+    // display book details
+    printf("\n--- Book Details ---\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("\nBook %d\n", i + 1);
+        printf("Book ID : %d\n", b[i].bookId);
+        printf("Title   : %s\n", b[i].title);
+        printf("Price   : %.2f\n", b[i].price);
+    }
+
+    return 0;
+}
+o/p:
+Enter number of books: 2
+
+Enter details of Book 1
+Enter Book ID: 321
+Enter Book Title: python
+Enter Book Price: 340
+
+Enter details of Book 2
+Enter Book ID: 213
+Enter Book Title: data structure
+Enter Book Price: 450
+
+--- Book Details ---
+
+Book 1
+Book ID : 321
+Title   : python
+Price   : 340.00
+
+Book 2
+Book ID : 213
+Title   : data structure
+Price   : 450.00
