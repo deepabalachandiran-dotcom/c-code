@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+// function to display menu
+void displayMenu()
+{
+    printf("----- MENU -----\n");
+    printf("1. Tea\n");
+    printf("2. Coffee\n");
+    printf("3. Juice\n");
+    printf("4. Exit\n");
+}
+
+int main()
+{
+    int choice;
+
+    // function call
+    displayMenu();
+
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    // process choice
+    switch (choice)
+    {
+        case 1:
+            printf("You selected Tea\n");
+            break;
+        case 2:
+            printf("You selected Coffee\n");
+            break;
+        case 3:
+            printf("You selected Juice\n");
+            break;
+        case 4:
+            printf("Thank you! Exiting...\n");
+            break;
+        default:
+            printf("Invalid choice\n");
+    }
+
+    return 0;
+}
+o/p:
+----- MENU -----
+1. Tea
+2. Coffee
+3. Juice
+4. Exit
+Enter your choice: 3
+You selected Juice
+
