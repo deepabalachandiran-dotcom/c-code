@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+// structure to store student marks
+struct Student
+{
+    int rollNo;
+    char name[50];
+    int mark1;
+    int mark2;
+    int mark3;
+    int total;
+};
+
+int main()
+{
+    struct Student s;
+
+    // input student details
+    printf("Enter Roll Number: ");
+    scanf("%d", &s.rollNo);
+
+    printf("Enter Student Name: ");
+    scanf(" %[^\n]", s.name);
+
+    printf("Enter Mark 1: ");
+    scanf("%d", &s.mark1);
+
+    printf("Enter Mark 2: ");
+    scanf("%d", &s.mark2);
+
+    printf("Enter Mark 3: ");
+    scanf("%d", &s.mark3);
+
+    // calculate total marks
+    s.total = s.mark1 + s.mark2 + s.mark3;
+
+    // display result
+    printf("\n--- Student Result ---\n");
+    printf("Roll Number : %d\n", s.rollNo);
+    printf("Name        : %s\n", s.name);
+    printf("Total Marks : %d\n", s.total);
+
+    return 0;
+}
+o/p:
+Enter Roll Number: 21
+Enter Student Name: sofi
+Enter Mark 1: 50
+Enter Mark 2: 60
+Enter Mark 3: 70
+
+--- Student Result ---
+Roll Number : 21
+Name        : sofi
+Total Marks : 180
