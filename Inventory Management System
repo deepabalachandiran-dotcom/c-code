@@ -1,0 +1,199 @@
+#include <stdio.h>
+#include <string.h>
+
+// structure to store item details
+struct Item
+{
+    int itemId;
+    char name[50];
+    int quantity;
+    float price;
+};
+
+int main()
+{
+    struct Item inventory[100];
+    int n = 0;   // current number of items
+    int choice, i, searchId, found;
+    
+    while (1)
+    {
+        // display menu
+        printf("\n--- Inventory Management System ---\n");
+        printf("1. Add Item\n");
+        printf("2. Display All Items\n");
+        printf("3. Search Item by ID\n");
+        printf("4. Update Item by ID\n");
+        printf("5. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+            case 1: // Add item
+                printf("\nEnter Item ID: ");
+                scanf("%d", &inventory[n].itemId);
+
+                printf("Enter Item Name: ");
+                scanf(" %[^\n]", inventory[n].name);
+
+                printf("Enter Quantity: ");
+                scanf("%d", &inventory[n].quantity);
+
+                printf("Enter Price: ");
+                scanf("%f", &inventory[n].price);
+
+                n++;
+                printf("Item added successfully!\n");
+                break;
+
+            case 2: // Display all items
+                if (n == 0)
+                {
+                    printf("\nNo items in inventory.\n");
+                }
+                else
+                {
+                    printf("\n--- Inventory Items ---\n");
+                    for (i = 0; i < n; i++)
+                    {
+                        printf("\nItem %d\n", i + 1);
+                        printf("ID       : %d\n", inventory[i].itemId);
+                        printf("Name     : %s\n", inventory[i].name);
+                        printf("Quantity : %d\n", inventory[i].quantity);
+                        printf("Price    : %.2f\n", inventory[i].price);
+                    }
+                }
+                break;
+
+            case 3: // Search item by ID
+                printf("\nEnter Item ID to search: ");
+                scanf("%d", &searchId);
+                found = 0;
+
+                for (i = 0; i < n; i++)
+                {
+                    if (inventory[i].itemId == searchId)
+                    {
+                        printf("\n--- Item Found ---\n");
+                        printf("ID       : %d\n", inventory[i].itemId);
+                        printf("Name     : %s\n", inventory[i].name);
+                        printf("Quantity : %d\n", inventory[i].quantity);
+                        printf("Price    : %.2f\n", inventory[i].price);
+                        found = 1;
+                        break;
+                    }
+                }
+
+                if (!found)
+                    printf("\nItem with ID %d not found.\n", searchId);
+                break;
+
+            case 4: // Update item by ID
+                printf("\nEnter Item ID to update: ");
+                scanf("%d", &searchId);
+                found = 0;
+
+                for (i = 0; i < n; i++)
+                {
+                    if (inventory[i].itemId == searchId)
+                    {
+                        printf("\nEnter new Name: ");
+                        scanf(" %[^\n]", inventory[i].name);
+
+                        printf("Enter new Quantity: ");
+                        scanf("%d", &inventory[i].quantity);
+
+                        printf("Enter new Price: ");
+                        scanf("%f", &inventory[i].price);
+
+                        printf("\nItem updated successfully!\n");
+                        found = 1;
+                        break;
+                    }
+                }
+
+                if (!found)
+                    printf("\nItem with ID %d not found.\n", searchId);
+                break;
+
+            case 5: // Exit
+                printf("\nExiting program. Goodbye!\n");
+                return 0;
+
+            default:
+                printf("\nInvalid choice! Please try again.\n");
+        }
+    }
+
+    return 0;
+}
+o/p:
+--- Inventory Management System ---
+1. Add Item
+2. Display All Items
+3. Search Item by ID
+4. Update Item by ID
+5. Exit
+Enter your choice: 1
+
+Enter Item ID: 101
+Enter Item Name: notebook
+Enter Quantity: 50
+Enter Price: 25
+Item added successfully!
+
+--- Inventory Management System ---
+1. Add Item
+2. Display All Items
+3. Search Item by ID
+4. Update Item by ID
+5. Exit
+Enter your choice: 2
+
+--- Inventory Items ---
+
+Item 1
+ID       : 101
+Name     : notebook
+Quantity : 50
+Price    : 25.00
+
+--- Inventory Management System ---
+1. Add Item
+2. Display All Items
+3. Search Item by ID
+4. Update Item by ID
+5. Exit
+Enter your choice: 3
+
+Enter Item ID to search: 101
+
+--- Item Found ---
+ID       : 101
+Name     : notebook
+Quantity : 50
+Price    : 25.00
+
+--- Inventory Management System ---
+1. Add Item
+2. Display All Items
+3. Search Item by ID
+4. Update Item by ID
+5. Exit
+Enter your choice: 4
+
+Enter Item ID to update: 101
+
+Enter new Name: notebook a4
+Enter new Quantity: 60
+Enter new Price: 30
+
+Item updated successfully!
+
+--- Inventory Management System ---
+1. Add Item
+2. Display All Items
+3. Search Item by ID
+4. Update Item by ID
+5. Exit
