@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{
+    int n, i;
+    int arr[100];
+    int largest, smallest;
+
+    // read number of elements
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    // read array elements
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+
+    // initialize largest and smallest
+    largest = smallest = arr[0];
+
+    // find largest and smallest
+    for (i = 1; i < n; i++)
+    {
+        if (arr[i] > largest)
+            largest = arr[i];
+
+        if (arr[i] < smallest)
+            smallest = arr[i];
+    }
+
+    // display result
+    printf("\nLargest element = %d\n", largest);
+    printf("Smallest element = %d\n", smallest);
+
+    return 0;
+}
+o/p:
+Enter number of elements: 3
+Enter 3 elements:
+40
+20
+10
+
+Largest element = 40
+Smallest element = 10
