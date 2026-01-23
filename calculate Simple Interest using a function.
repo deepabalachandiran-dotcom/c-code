@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+// function to calculate simple interest
+float calculateInterest(float principal, float rate, float time)
+{
+    return (principal * rate * time) / 100;
+}
+
+int main()
+{
+    float principal, rate, time, interest;
+
+    // input values
+    printf("Enter principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter rate of interest: ");
+    scanf("%f", &rate);
+
+    printf("Enter time (in years): ");
+    scanf("%f", &time);
+
+    // function call
+    interest = calculateInterest(principal, rate, time);
+
+    // display result
+    printf("Simple Interest = %.2f\n", interest);
+
+    return 0;
+}
+o/p:
+Enter principal amount: 3000
+Enter rate of interest: 2
+Enter time (in years): 1
+Simple Interest = 60.00
