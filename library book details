@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// structure to store book details
+struct Book
+{
+    int bookId;
+    char title[50];
+    char author[50];
+    float price;
+};
+
+int main()
+{
+    struct Book b;
+
+    // input book details
+    printf("Enter Book ID: ");
+    scanf("%d", &b.bookId);
+
+    printf("Enter Book Title: ");
+    scanf(" %[^\n]", b.title);
+
+    printf("Enter Author Name: ");
+    scanf(" %[^\n]", b.author);
+
+    printf("Enter Book Price: ");
+    scanf("%f", &b.price);
+
+    // display book details
+    printf("\n--- Library Book Details ---\n");
+    printf("Book ID    : %d\n", b.bookId);
+    printf("Title      : %s\n", b.title);
+    printf("Author     : %s\n", b.author);
+    printf("Price      : %.2f\n", b.price);
+
+    return 0;
+}
+o/p:
+Enter Book ID: 102
+Enter Book Title: c programing
+Enter Author Name: dennis ritchie
+Enter Book Price: 230
+
+--- Library Book Details ---
+Book ID    : 102
+Title      : c programing
+Author     : dennis ritchie
+Price      : 230.00
