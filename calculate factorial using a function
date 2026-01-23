@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+// function to calculate factorial
+int factorial(int n)
+{
+    int i, fact = 1;
+
+    for (i = 1; i <= n; i++)
+    {
+        fact = fact * i;
+    }
+    return fact;
+}
+
+int main()
+{
+    int num, result;
+
+    // input number
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    // function call
+    result = factorial(num);
+
+    // display result
+    printf("Factorial of %d = %d\n", num, result);
+
+    return 0;
+}
+o/p:
+Enter a number: 5
+Factorial of 5 = 120
