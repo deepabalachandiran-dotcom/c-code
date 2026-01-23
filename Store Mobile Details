@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+// structure to store mobile details
+struct Mobile
+{
+    int mobileId;
+    char brand[30];
+    char model[30];
+    float price;
+};
+
+int main()
+{
+    struct Mobile m;
+
+    // input mobile details
+    printf("Enter Mobile ID: ");
+    scanf("%d", &m.mobileId);
+
+    printf("Enter Mobile Brand: ");
+    scanf(" %[^\n]", m.brand);
+
+    printf("Enter Mobile Model: ");
+    scanf(" %[^\n]", m.model);
+
+    printf("Enter Mobile Price: ");
+    scanf("%f", &m.price);
+
+    // display mobile details
+    printf("\n--- Mobile Details ---\n");
+    printf("Mobile ID    : %d\n", m.mobileId);
+    printf("Brand        : %s\n", m.brand);
+    printf("Model        : %s\n", m.model);
+    printf("Price        : %.2f\n", m.price);
+
+    return 0;
+}
+o/p:
+Enter Mobile ID: 321
+Enter Mobile Brand: oppo
+Enter Mobile Model: galaxcy a14
+Enter Mobile Price: 15000
+
+--- Mobile Details ---
+Mobile ID    : 321
+Brand        : oppo
+Model        : galaxy a14
+Price        : 15000.00
+
