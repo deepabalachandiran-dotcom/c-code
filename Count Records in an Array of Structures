@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+// structure definition
+struct Student
+{
+    int rollNo;
+    char name[50];
+};
+
+int main()
+{
+    struct Student s[100];
+    int n, i;
+
+    // input number of records
+    printf("Enter number of students: ");
+    scanf("%d", &n);
+
+    // input student details
+    for (i = 0; i < n; i++)
+    {
+        printf("\nEnter details of Student %d\n", i + 1);
+
+        printf("Enter Roll Number: ");
+        scanf("%d", &s[i].rollNo);
+
+        printf("Enter Name: ");
+        scanf(" %[^\n]", s[i].name);
+    }
+
+    // display count of records
+    printf("\nTotal number of records stored: %d\n", n);
+
+    return 0;
+}
+o/p:
+Enter number of students: 2
+
+Enter details of Student 1
+Enter Roll Number: 3
+Enter Name: ravi
+
+Enter details of Student 2
+Enter Roll Number: 2
+Enter Name: ram
+
+Total number of records stored: 2
