@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+// structure definition
+struct Student
+{
+    int rollNo;
+    char name[50];
+    float marks;
+};
+
+int main()
+{
+    struct Student s;
+
+    // input student details
+    printf("Enter Roll Number: ");
+    scanf("%d", &s.rollNo);
+
+    printf("Enter Name: ");
+    scanf("%s", s.name);
+
+    printf("Enter Marks: ");
+    scanf("%f", &s.marks);
+
+    // display student details
+    printf("\n--- Student Details ---\n");
+    printf("Roll Number : %d\n", s.rollNo);
+    printf("Name        : %s\n", s.name);
+    printf("Marks       : %.2f\n", s.marks);
+
+    return 0;
+}
+o/p:
+Enter Roll Number: 31
+Enter Name: deepa
+Enter Marks: 90
+
+--- Student Details ---
+Roll Number : 31
+Name        : deepa
+Enter Marks :90.00
