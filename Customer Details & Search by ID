@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+// structure to store customer details
+struct Customer
+{
+    int customerId;
+    char name[50];
+    char mobile[15];
+};
+
+int main()
+{
+    struct Customer c[100];
+    int n, i, searchId, found = 0;
+
+    // number of customers
+    printf("Enter number of customers: ");
+    scanf("%d", &n);
+
+    // input customer details
+    for (i = 0; i < n; i++)
+    {
+        printf("\nEnter details of Customer %d\n", i + 1);
+
+        printf("Enter Customer ID: ");
+        scanf("%d", &c[i].customerId);
+
+        printf("Enter Customer Name: ");
+        scanf(" %[^\n]", c[i].name);
+
+        printf("Enter Mobile Number: ");
+        scanf(" %[^\n]", c[i].mobile);
+    }
+
+    // search customer by ID
+    printf("\nEnter Customer ID to search: ");
+    scanf("%d", &searchId);
+
+    for (i = 0; i < n; i++)
+    {
+        if (c[i].customerId == searchId)
+        {
+            printf("\n--- Customer Found ---\n");
+            printf("Customer ID : %d\n", c[i].customerId);
+            printf("Name        : %s\n", c[i].name);
+            printf("Mobile No   : %s\n", c[i].mobile);
+            found = 1;
+            break;
+        }
+    }
+
+    if (found == 0)
+    {
+        printf("\nCustomer with ID %d not found.\n", searchId);
+    }
+
+    return 0;
+}
+o/p:
+Enter number of customers: 1
+
+Enter details of Customer 1
+Enter Customer ID: 243
+Enter Customer Name: ram
+Enter Mobile Number: 8778234497
+
+Enter Customer ID to search: 243
+
+--- Customer Found ---
+Customer ID : 243
+Name        : ram
+Mobile No   : 8778234497
